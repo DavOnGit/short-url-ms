@@ -1,0 +1,34 @@
+{
+  "name": "short-url-ms",
+  "version": "1.0.0",
+  "description": "Url shortener microservice",
+  "main": "server.js",
+  "scripts": {
+    "start": "nf run nodemon server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavOnGit/short-url-ms.git"
+  },
+  "keywords": [
+    "url",
+    "microservice",
+    "shortener"
+  ],
+  "author": "Davide Vozzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavOnGit/short-url-ms/issues"
+  },
+  "homepage": "https://github.com/DavOnGit/short-url-ms#readme",
+  "dependencies": {
+    "express": "4.14.0",
+    "foreman": "2.0.0",
+    "make-random-string": "1.0.5",
+    "mongodb": "2.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "1.10.2"
+  }
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Url Shortener Microservice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/bootstrap.min.css">
+  </head>
+  <body>
+    <br>
+    <div class="container " style={[background-color]:#532F8C}>
+        <h1>Url Shortener Microservice</h1>
+    </div>
+    <br>
+    <div class="container">
+        <p>In this App...</p>
+        
+        <ol>
+            <li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+            <li>When I visit that shortened URL, it will redirect to original link.</li>
+        </ol>
+        <br>
+        <h4>Example input:</h4>
+        
+        <p>Point your browser to one of the following addresses:</p>
+        
+        <ul>
+          <li>
+            <p>https://shorturlms.herokuapp.com/cut/https://www.google.com</p>
+          </li>
+          <li>
+            <p>https://shorturlms.herokuapp.com/cut/http://121.0.0.1:80</p>
+          </li>
+        </ul>
+        <br>
+        <h4>Example output:</h4>
+        
+        <p>{ "original_url":"http://www.google.com", "short_url":"https://shorturlms.herokuapp.com/sVPGhZ" }</p>
+        <br>
+        <p>Now just copy the short_url address and paste it in browser (without double quotes!)</p>
+        <ul>
+          <li>
+            <p>https://shorturlms.herokuapp.com/sVPGhZ</p>
+          </li>
+        </ul>
+        <br>
+        <p>Note: Shor URLs are valid for 1 hour from creation!</p>
+    </div>
+    
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
