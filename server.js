@@ -10,16 +10,15 @@ const url = process.env.MONGODB_URI;
 
 app.set('strict routing', true);
 app.set('port', (process.env.PORT || 5000));
-//app.set('IP', (process.env.IP || '127.0.0.1'));
 app.use(express.static(__dirname + '/public'));
 
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
     
-    console.log("Connected correctly to the DB server");
+    console.log( "Connected correctly to the DB server" );
     
-    app.listen( app.get('port'), app.get('IP'), () => {
-        //console.log('listening on url: ' + app.get('IP') + ':' + app.get('port'));
+    app.listen( app.get('port'), () => {
+        console.log( 'listening on port: ' + app.get('port') );
     });
     
     var coll = db.collection('urlmap');

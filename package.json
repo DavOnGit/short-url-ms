@@ -4,8 +4,8 @@
   "description": "Url shortener microservice",
   "main": "server.js",
   "scripts": {
-    "start": "nf run nodemon server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nf run nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,10 @@
     "express": "4.14.0",
     "foreman": "2.0.0",
     "make-random-string": "1.0.5",
-    "mongodb": "2.2.10"
+    "mongodb": "2.2.10",
+    "nodemon": "1.10.2"
   },
   "devDependencies": {
-    "nodemon": "1.10.2"
+    
   }
 }
