@@ -11,6 +11,7 @@ const url = process.env.MONGODB_URI;
 app.set('strict routing', true);
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
+app.set('json spaces', 4);
 
 MongoClient.connect(url, function(err, db) {
     assert.equal(null, err);
@@ -44,7 +45,7 @@ MongoClient.connect(url, function(err, db) {
         iterate(req,res);
     }
     
-    function insOne(req,res,next) {console.log('before insert: '+ req.shorUrl);
+    function insOne(req,res,next) {
         coll.insert({ url: req.par, surl: req.shorUrl, date: new Date() }, function(err,data) {
             assert.equal(err, null);
             assert.equal(1, data.insertedCount);
@@ -93,6 +94,7 @@ MongoClient.connect(url, function(err, db) {
             original_url: req.par,
             short_url: req.headers['x-forwarded-proto'] + '://' + req.headers.host + '/' + req.shorUrl
         };
+        res.setHeader('Content-Type', 'application/json');
         res.send(result);
     });
     
@@ -104,7 +106,7 @@ MongoClient.connect(url, function(err, db) {
             assert.equal(err, null);
             
             if (data) res.redirect(data.url);
-            else res.end('Error: not in database');
+            else res.end('Error: not in database, please register a new Short Url!');
         });
     });
 });
